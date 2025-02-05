@@ -1,1 +1,1 @@
-# GStreamer Playground Rust
+# GStreamer Playground
