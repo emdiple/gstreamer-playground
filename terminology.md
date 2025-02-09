@@ -1,4 +1,4 @@
-## Terminology
+# Terminology
 * **GStreamer** : 
 A multimedia framework for processing media flows.
 * **Source Elements (Producers)**:
