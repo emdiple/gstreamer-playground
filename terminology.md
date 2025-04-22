@@ -113,6 +113,11 @@
     - Retrieve the bus from a pipeline using functions like `gst_element_get_bus()`.  
     - Process messages either synchronously (e.g., using `gst_bus_timed_pop_filtered()`) or asynchronously with callbacks.
 
+* **Pads**:  
+    Connection points on elements used for linking. Pad names can be specified to control which specific pads are connected. For the most part, all data in GStreamer flows one way through a link between elements. Data flows out of one element through one or more source pads, and elements accept incoming data through one or more sink pads. Source and sink elements have only source and sink pads, respectively.
+
+
+
 * **Pipeline Examples**:  
   Practical examples demonstrate various tasks:
   - **Audio Playback**:  
@@ -152,8 +157,6 @@
 * **Additional Concepts**:  
   - **Names**:  
     Elements can be given a custom name via the `name` property. If omitted, GStreamer assigns a unique name. Custom names help in retrieving elements later or for debugging.
-  - **Pads**:  
-    Connection points on elements used for linking. Pad names can be specified to control which specific pads are connected.
   - **Playbin/Decodebin**:  
     High-level elements (`playbin3`, `uridecodebin3`) that automatically construct a pipeline to play media from a URI.
   - **Filtered Connections**:  
