@@ -1,6 +1,12 @@
 * **Pipeline Description**:  
   A complete specification of a media processing workflow. A pipeline consists of elements, links, and optionally bins. These components can be specified in any order, and they work together to define how media data is processed.
 
+* **Branch**:  
+  A branch is a segment of a pipeline that processes a copy of the data stream independently. By branching, you can, for example, display a video stream on the screen while simultaneously recording it to a file.
+The tee element facilitates this by having:​
+  - One sink pad: Receives the input data.
+  - Multiple source pads: Each outputs a copy of the input data to a different branch.
+
 * **Elements**:  
   The basic building blocks in GStreamer that perform specific tasks (e.g., generating, processing, or consuming media data).  
   - **Syntax**:  
@@ -114,7 +120,7 @@
     - Process messages either synchronously (e.g., using `gst_bus_timed_pop_filtered()`) or asynchronously with callbacks.
 
 * **Pads**:  
-    Connection points on elements used for linking. Pad names can be specified to control which specific pads are connected. For the most part, all data in GStreamer flows one way through a link between elements. Data flows out of one element through one or more source pads, and elements accept incoming data through one or more sink pads. Source and sink elements have only source and sink pads, respectively.
+    Pads are connection points on elements used for linking. Pad names can be specified to control which specific pads are connected. For the most part, all data in GStreamer flows one way through a link between elements. Data flows out of one element through one or more source pads, and elements accept incoming data through one or more sink pads. Source and sink elements have only source and sink pads, respectively. Through a process known as negotiation, two linked Pads agree on a common type, and thus the Capabilities of the Pads become fixed (they only have one type and do not contain ranges)
 
 
 
